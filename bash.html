@@ -12,6 +12,15 @@ xrandr --output LVDS1 --mode 1366x768
 xrandr --output HDMI1 --mode 1680x1050 --right-of LVDS1
 </pre>
 
+<b>Download the latest version of Firefox</b>
+<pre>
+LATEST_VERSION_PATH="https://download.mozilla.org/?product=firefox-latest&os=linux&lang=en-GB"
+
+FILE_NAME=`curl -I $LATEST_VERSION_PATH |  perl -n -e'/Location: .*\/([a-z0-9\-.]+).*$/ && print $1' `
+curl -L -o $FILE_NAME $LATEST_VERSION_PATH
+</pre>
+
+
 </body>
 </html>
 
