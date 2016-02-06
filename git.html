@@ -1,0 +1,35 @@
+<html>
+<body>
+
+<b>.gitconfig</b>
+<pre>
+[push]
+    default = simple
+[alias]
+    lg = log --pretty=format:'%Cgreen%ci %Cred%h%Creset - %C(yellow)%s %Cblue%ae|%an'
+[github]
+    user = ...
+    token = ...
+</pre>
+
+<b>Show current branch</b>
+<pre>
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+if [ -f ~/.git-prompt.sh ]; then
+  . ~/.git-prompt.sh
+fi
+PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
+</pre>
+
+<b>Git autocompletion</b>
+<pre>
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o .git-completion.sh
+
+if [ -f ~/.git-completion.sh ]; then
+  . ~/.git-completion.sh
+fi
+</pre>
+
+</body>
+</html>
+
