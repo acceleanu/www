@@ -20,6 +20,10 @@ FILE_NAME=`curl -I $LATEST_VERSION_PATH |  perl -n -e'/Location: .*\/([a-z0-9\-.
 curl -L -o $FILE_NAME $LATEST_VERSION_PATH
 </pre>
 
+<b>List Google APIs</b>
+<pre>
+http https://www.googleapis.com/discovery/v1/apis  | jq '.items | .[].name' | uniq
+</pre>
 
 </body>
 </html>
