@@ -25,6 +25,12 @@ curl -L -o $FILE_NAME $LATEST_VERSION_PATH
 http https://www.googleapis.com/discovery/v1/apis  | jq '.items | .[].name' | uniq
 </pre>
 
+<b>Split large file into multiple chunks and join back</b>
+<span style="white-space: pre;">
+split -b 1G workspace.tgz workspace
+cat workspace?? > workspace.tgz 
+</span>
+
 </body>
 </html>
 
