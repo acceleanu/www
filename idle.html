@@ -1,0 +1,21 @@
+<html>
+<body>
+
+<b>Toggle NumLock in windows</b>
+<pre>
+idle.vbs
+--------
+
+Set wsh = Wscript.CreateObject("Wscript.Shell")
+
+Do While True
+    wsh.SendKeys "{NUMLOCK}"
+    WScript.Sleep 500
+    wsh.SendKeys "{NUMLOCK}"
+    WScript.Sleep 3*60*1000
+Loop
+</pre>
+
+</body>
+</html>
+
