@@ -1,4 +1,5 @@
 set incsearch
+set noundofile
 set nobackup
 set nowritebackup
 set expandtab
