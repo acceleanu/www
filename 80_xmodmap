@@ -1,0 +1,16 @@
+#/etc/X11/Xsession.d/80_xmodmap
+#put a file named 80_xmodmap in /etc/X11/Xsession.d/ with these contents:
+#https://askubuntu.com/questions/749660/how-persistently-remap-keys-in-ubuntu-16-04
+# Set custom keycodes
+#
+# This file is sourced by Xsession(5), not executed.
+# The "|| true" is to ensure that the Xsession script does not terminate on error
+
+USRMODMAP="$HOME/.Xmodmap"
+
+if [ -x /usr/bin/xmodmap ]; then
+	if [ -f "$USRMODMAP" ]; then
+		/usr/bin/xmodmap "$USRMODMAP" || true
+	fi
+fi
+
