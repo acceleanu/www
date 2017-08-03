@@ -27,4 +27,5 @@ au FileType puppet setlocal syntax=puppet
 set paste
 
 nmap =j :%!python -m json.tool<CR>
+nnoremap K i<CR><Esc>
 
