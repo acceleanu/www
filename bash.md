@@ -38,5 +38,8 @@ xmodmap ~/.Xmodmap
 
 - edit /usr/X11/share/X11/xorg.conf.d/90-keyboard-layout.conf and replace XkbLayout->'us' with 'gb' 
 
-
+# Extract text from pdf
+```
+gs -sDEVICE=txtwrite -o output.txt input.pdf
+```
 
