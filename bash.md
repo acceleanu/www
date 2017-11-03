@@ -43,3 +43,9 @@ xmodmap ~/.Xmodmap
 gs -sDEVICE=txtwrite -o output.txt input.pdf
 ```
 
+# Convert images to pdf
+```
+convert *.jpg output.pdf
+```
+
+
