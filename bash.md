@@ -48,4 +48,11 @@ gs -sDEVICE=txtwrite -o output.txt input.pdf
 convert *.jpg output.pdf
 ```
 
+# Paste clipboard selection into file
+```
+xclip -o > output.txt
+xclip -o -selection p > output.txt
+xclip -o -selection s > output.txt
+xclip -o -selection c > output.txt
+```
 
