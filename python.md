@@ -2,7 +2,7 @@
 
 ## [http://docs.python-guide.org/en/latest/dev/virtualenvs]
 
-- pipenv 
+- pipenv install and simple library usage
 ```
 pip install --user pipenv
 mkdir project && cd project
@@ -21,6 +21,11 @@ pip install BeautifulSoup4
 deactivate
 ```
 
-
+- ipython with pipenv
+```
+pipenv --three
+pipenv install ipython
+pipenv run ipython
+```
 
 
