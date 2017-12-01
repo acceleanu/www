@@ -28,4 +28,13 @@ pipenv install ipython
 pipenv run ipython
 ```
 
+- jupyter notebook
+```
+mkdir project && cd project
+pipenv --three install ipython
+pipenv shell
+pip install jupyter
+pip install matplotlib
+jupyter-notebook
+```
 
