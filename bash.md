@@ -55,4 +55,7 @@ xclip -o -selection p > output.txt
 xclip -o -selection s > output.txt
 xclip -o -selection c > output.txt
 ```
+# Set clipboard content from file
+cat file.txt | xclip -i -selection c
+
 
