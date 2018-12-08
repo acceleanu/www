@@ -59,9 +59,15 @@ xclip -o -selection c > output.txt
 cat file.txt | xclip -i -selection c
 ```
 
-# write iso image
+# write dvd iso image
 ```
 growisofs -dvd-compat -speed=2 -Z /dev/sr0=/path/to/iso
 ```
 
+# write cd iso image
+```
+modprobe sg
+cdrecord -scanbus
+cdrecord -v speed=4 dev=0,2,3 path/to/iso
+```
 
