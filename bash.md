@@ -82,3 +82,8 @@ cdrecord -scanbus
 cdrecord -v speed=4 dev=0,2,3 path/to/iso
 ```
 
+
+# extract audio from video a file
+```
+ffmpeg -i in.mp4 -vn -acodec libvorbis out.ogg
+```
