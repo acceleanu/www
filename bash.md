@@ -4,6 +4,8 @@ slackpkg update
 slackpkg upgrade-all
 ntpdate pool.ntp.org
 ```
+# Given a file name find the package it belongs to
+grep -rni libX11-xcb.la /var/log/packages/
 
 # iPhone photo backup
 ## Get all 
@@ -49,6 +51,11 @@ convert *.jpg output.pdf
 ```
 
 # Paste clipboard selection into file
+xclip
+- p = primary (term)
+- s = secondary 
+- c = clipboard (browser)
+
 ```
 xclip -o > output.txt
 xclip -o -selection p > output.txt
@@ -57,6 +64,10 @@ xclip -o -selection c > output.txt
 # Set clipboard content from file
 ```
 cat file.txt | xclip -i -selection c
+```
+# copy from term clipboard to browser clipboard
+```
+xclip -o -selection p | xclip -i -selection c
 ```
 
 # write dvd iso image
