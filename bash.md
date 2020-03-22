@@ -87,3 +87,19 @@ cdrecord -v speed=4 dev=0,2,3 path/to/iso
 ```
 ffmpeg -i in.mp4 -vn -acodec libvorbis out.ogg
 ```
+
+# zero padded index
+```
+i=1
+while [ $i -lt 11 ];
+do
+        ipadded="00$i"
+        idx=${ipadded:${#ipadded}-2}
+        echo "${idx}"
+        ((i++))
+done
+```
+
+
+
+
