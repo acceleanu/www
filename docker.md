@@ -70,10 +70,14 @@ $ docker start webserver
 ```
 $ docker attach webserver
 ```
-
+- remove all dangling images
+```
+docker images -f "dangling=true" -q | xargs docker rmi -f
+```
 - remove all instances
 ```
 $ docker rm -f $(docker ps -aq)
+$ docker ps -aq | xargs docker rm -f
 ```
 
 - find port mappings
@@ -118,5 +122,8 @@ $ docker commit -m 'description of the change' <container_id> <tag_name>
 $ docker tag <tag_name> <my_docker_hub_user>/<tag_name>
 $ docker push <my_docker_hub_user>/<tag_name>
 ```
+
+docker run -ti--user nobody busybox
+
 
 
