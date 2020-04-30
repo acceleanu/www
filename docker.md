@@ -20,84 +20,88 @@ $ docker pull centos/mongodb-36-centos7 && docker history centos/mongodb-36-cent
 ### Basic Commands
 - **docker run**
 ```
-$ docker run --help
+docker run --help
 ```
 ```
-$ docker run busybox /bin/echo 'hello world!' 
+docker run busybox /bin/echo 'hello world!' 
 ```
 ```
-$ docker run busybox ping google.com
+docker run busybox ping google.com
 ```
 
 - interact with the container
 ```
-$ docker run -it ubuntu /bin/bash
+docker run -it ubuntu /bin/bash
 ```
 
 - expose port 80 from the container as port 8000 on the host machine
 ```
-$ docker run -p 8000:80 nginx
+docker run -p 8000:80 nginx
 ```
 
 - run in detached mode
 ```
-$ docker run -d -p 8000:80 nginx
+docker run -d -p 8000:80 nginx
 ```
 
 - give a name to the container
 ```
-$ docker run -d -p 8000:80 --name webserver nginx
+docker run -d -p 8000:80 --name webserver nginx
 ```
 
 - show logs
 ```
-$ docker logs -f webserver
+docker logs -f webserver
 ```
 
 - stop a container
 ```
-$ docker ps -a
-$ docker stop webserver
+docker ps -a
+docker stop webserver
 ```
 
 - start a container
 ```
-$ docker ps -a
-$ docker start webserver
+docker ps -a
+docker start webserver
 ```
 
 - attach to a running container
 ```
-$ docker attach webserver
+docker attach webserver
 ```
 - remove all dangling images
 ```
 docker images -f "dangling=true" -q | xargs docker rmi -f
 ```
+- kill all running instances
+```
+docker ps -qa | xargs docker kill
+```
 - remove all instances
 ```
-$ docker rm -f $(docker ps -aq)
-$ docker ps -aq | xargs docker rm -f
+docker rm -f $(docker ps -aq)
+docker ps -aq | xargs docker rm -f
 ```
 
 - find port mappings
 ```
-$ docker port webserver
+docker port webserver
 ```
 
 - find changes in the container vs the image that the container has been started from
 ```
-$ docker diff webserver
+docker diff webserver
 ```
 
 - copy files from the container
 ```
-$ docker cp webserver:/usr/share/nginx/html/index.html .
+docker cp webserver:/usr/share/nginx/html/index.html .
 ```
 
 - get detailed info about a container
 ```
-$ docker inspect webserver
+docker inspect webserver --no-trunc
 ```
 
 ## docker hub
@@ -107,23 +111,26 @@ $ docker inspect webserver
 
 - Searching for images on the local machine
 ```
-$ docker search mongodb
+docker search mongodb
 ```
 - [Search for images on docker hub](https://hub.docker.com)
 
 - pull image to local machine
 ```
-$ docker pull postgres:latest
+docker pull postgres:latest
 ```
 - commit and push image to docker hub
 ```
-$ docker login # if not yet logged in
-$ docker commit -m 'description of the change' <container_id> <tag_name>
-$ docker tag <tag_name> <my_docker_hub_user>/<tag_name>
-$ docker push <my_docker_hub_user>/<tag_name>
+docker login # if not yet logged in
+docker commit -m 'description of the change' <container_id> <tag_name>
+docker tag <tag_name> <my_docker_hub_user>/<tag_name>
+docker push <my_docker_hub_user>/<tag_name>
 ```
-
-docker run -ti--user nobody busybox
-
-
-
+- run the busybox and get to the console
+```
+docker run -ti --user nobody busybox
+```
+- give name to created docker image 
+```
+docker build -f path/to/Dockerfile -t my-app/local:latest .
+```
