@@ -99,7 +99,19 @@ do
         ((i++))
 done
 ```
+# create lecture folders
+mkdir lecture0{1..9}
 
+# backup over network
+- receiver
+```
+nc -l -p 9000 -w 300 > backup-file.img
 
+```
+
+- sender
+```
+bzip2 -c org-file | nc ip.addr.of.receiver 9000
+```
 
 
