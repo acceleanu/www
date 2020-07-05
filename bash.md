@@ -114,4 +114,10 @@ nc -l -p 9000 -w 300 > backup-file.img
 bzip2 -c org-file | nc ip.addr.of.receiver 9000
 ```
 
+# split video before/after 50 minutes
+```
+ffmpeg -i largefile.mp4 -t 00:50:00 -c copy part1.mp4 -ss 00:50:00 -c copy part2.mp4
+```
+
+
 
