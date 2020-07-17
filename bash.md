@@ -119,5 +119,11 @@ bzip2 -c org-file | nc ip.addr.of.receiver 9000
 ffmpeg -i largefile.mp4 -t 00:50:00 -c copy part1.mp4 -ss 00:50:00 -c copy part2.mp4
 ```
 
-
+# copy git commit to another repo
+```
+git format-patch -1 HEAD
+```
+```
+git am < 001.patch
+```
 
