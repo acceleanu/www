@@ -1,16 +1,7 @@
 # Python misc
 
-## [http://docs.python-guide.org/en/latest/dev/virtualenvs]
-
-- pipenv install and simple library usage
-```
-pip install --user pipenv
-mkdir project && cd project
-pipenv install BeautifulSoup4
-pipenv run python main.py
-```
-
-- virtualenv
+## virtualenv
+- [http://docs.python-guide.org/en/latest/dev/virtualenvs]
 ```
 pip install virtualenv
 virtualenv project
@@ -21,14 +12,22 @@ pip install BeautifulSoup4
 deactivate
 ```
 
-- ipython with pipenv
+## pipenv install and simple library usage
+```
+pip install --user pipenv
+mkdir project && cd project
+pipenv install BeautifulSoup4
+pipenv run python main.py
+```
+
+## ipython with pipenv
 ```
 pipenv --three
 pipenv install ipython
 pipenv run ipython
 ```
 
-- jupyter notebook
+## jupyter notebook
 ```
 mkdir project && cd project
 pipenv --three install ipython
@@ -37,4 +36,9 @@ pip install jupyter
 pip install matplotlib
 jupyter-notebook
 ```
+
+## source code formatter
+- [Black](https://black.now.sh)
+- [PyCon 2019 - Stop worrying and embrace auto-formatting](https://www.youtube.com/watch?v=esZLCuWs_2Y)
+
 
