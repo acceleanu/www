@@ -41,4 +41,9 @@ jupyter-notebook
 - [Black](https://black.now.sh)
 - [PyCon 2019 - Stop worrying and embrace auto-formatting](https://www.youtube.com/watch?v=esZLCuWs_2Y)
 
+## misc
+- [walrus operator](https://www.youtube.com/watch?v=6uAvHOKofws)
+- [elegant python](https://www.youtube.com/watch?v=WiQqqB9MlkA) 
+- [typed python](https://www.youtube.com/watch?v=pMgmKJyWKn8) 
+- [pipenv](https://www.youtube.com/watch?v=GBQAKldqgZs) 
 

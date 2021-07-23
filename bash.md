@@ -128,3 +128,7 @@ git format-patch -1 HEAD
 git am < 001.patch
 ```
 
+# cleanup node_modules
+```
+find . -type d -name node_modules -prune -exec rm -rf {} \;
+```
