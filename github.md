@@ -12,6 +12,12 @@ Host github.com-acceleanu
 ```
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github-acceleanu
+ssh-add -l
+```
+
+- clone the repo 
+```
+git clone git@github.com:acceleanu/www
 ```
 
 - as a more permanent solution, create a script in ~/bin/start-ssh-agent.sh:
