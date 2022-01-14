@@ -132,3 +132,8 @@ git am < 001.patch
 ```
 find . -type d -name node_modules -prune -exec rm -rf {} \;
 ```
+
+# remove the DS_Store
+```
+find .  | grep DS_Store | xargs -I {} rm "{}"
+```
