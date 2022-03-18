@@ -137,3 +137,10 @@ find . -type d -name node_modules -prune -exec rm -rf {} \;
 ```
 find .  | grep DS_Store | xargs -I {} rm "{}"
 ```
+
+# split pem file containing multiple certificates
+```
+csplit -sz p1.crt '/.*BEGIN/' '{*}'
+```
+
+
