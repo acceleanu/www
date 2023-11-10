@@ -143,4 +143,15 @@ find .  | grep DS_Store | xargs -I {} rm "{}"
 csplit -sz p1.crt '/.*BEGIN/' '{*}'
 ```
 
+# initialize variable from a heredoc
+```
+read -r -d '' VAR <<'EOF'
+abc'asdf"
+$(dont-execute-this)
+foo"bar"''
+EOF
+
+
+echo "$VAR"
+```
 
